@@ -1,9 +1,11 @@
+using DrWatson
+@quickactivate I3CM
 using ClimateSatellite
 
 global_logger(ConsoleLogger(stderr,Logging.Info))
 
 user = "natgeo.wong@outlook.com";
-rvec = ["TRP","SEA","SGP"];
+rvec = ["TRP"];
 ddir = "/n/kuangdss01/user/nwong/clisat/"
 
 for yr = 2001 : 2019, mo = 1 : 12
@@ -11,5 +13,5 @@ for yr = 2001 : 2019, mo = 1 : 12
 end
 
 for yr = 2001 : 2019, reg in rvec
-    clisatanalysis("mtpw2m",yr,varname="prcp_rate",region=reg,path=ddir);
+    clisatanalysis("mtpw2m",yr,varname="tpw",region=reg,path=ddir);
 end
