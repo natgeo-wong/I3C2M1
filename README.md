@@ -1,2 +1,6 @@
-This is an awesome new scientific project that uses `DrWatson`!
+# I3CM: Investigating the Impact of Islands on Climate and Models
 
+The Maritime Continent is the largest island archipelago in the world and spans five major countries in the region: Malaysia, Indonesia, Singapore, Philippines and Papua New Guinea. It holds a critical role in the global climate for a multitude of reasons: (1) it is globally one of the most important sources of convective release of latent heat and therefore plays a critical role in the global moisture flux; (2) it is geographically unique in its distribution of land and sea, neither fully oceanic nor truly continental, and this results in a strong diurnal cycle of precipitation that modulates and is modulated by larger-scale climate phenomena such as the monsoon and the Madden-Julian Oscillation (MJO); (3) it is located within the Indo-Pacific warmpool, one of the major drivers of convection in the region.
+
+Many questions remain about the role of the Maritime Continent in global climate. But the questions that I am interested in ultimately boil down to one simple question: How do islands impact with the atmospheric circulation? In order to tackle these problems, I aim to use TRMM and GPM satellite-based rainfall data from the Precipitation Measurement Mission, satellite-derived (e.g. MIMIC-
+TPW2m) and GNSS-derived (e.g. SuGAr) precipitable water products, ERA5 and ERA-Interim reanalysis products, and a hierarchy of climate models ranging from idealized models to fully-coupled GCMs.
