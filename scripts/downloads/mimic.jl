@@ -1,12 +1,10 @@
 using DrWatson
-@quickactivate I3CM
+quickactivate("/n/holylfs/LABS/kuang_lab/nwong/I3CM/")
 using ClimateSatellite
-
-global_logger(ConsoleLogger(stderr,Logging.Info))
 
 user = "natgeo.wong@outlook.com";
 rvec = ["TRP"];
-ddir = "/n/kuangdss01/user/nwong/clisat/"
+ddir = "/n/kuangdss01/lab/clisat/"
 
 for yr = 2001 : 2019, mo = 1 : 12
     clisatdownload("mtpw2m",Date(yr,mo),email=user,regions=rvec,path=ddir);
