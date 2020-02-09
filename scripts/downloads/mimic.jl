@@ -2,6 +2,8 @@ using DrWatson
 quickactivate("/n/holylfs/LABS/kuang_lab/nwong/I3CM/")
 using ClimateSatellite
 
+global_logger(ConsoleLogger(stderr,Logging.Info))
+
 user = "natgeo.wong@outlook.com";
 rvec = ["TRP","ISM"]; rext = ["SEA","MLD","SMT"];
 ddir = "/n/kuangdss01/lab/clisat/"
