@@ -40,16 +40,16 @@ uuid = "d5fb7624-851a-54ee-a528-d3f3bac0b4a0"
 version = "0.2.3"
 
 [[ClimateEasy]]
-deps = ["Dates", "DelimitedFiles", "Printf", "PyCall", "PyPlot", "Statistics"]
-git-tree-sha1 = "cb9899c8738dace28972475e86271fadc99c0dbb"
+deps = ["Dates", "DelimitedFiles", "PrettyTables", "Printf", "PyCall", "PyPlot", "Statistics"]
+git-tree-sha1 = "14d55be1467db22edec82f53c08c9ed0e5ab6c0d"
 uuid = "47ceb0c8-0fe6-4c49-a4a1-92bc59187c00"
-version = "0.2.4"
+version = "0.2.6"
 
 [[ClimateSatellite]]
 deps = ["ClimateEasy", "Dates", "DelimitedFiles", "FTPClient", "HDF5", "NCDatasets", "Printf", "PyCall", "Statistics"]
-git-tree-sha1 = "85ada8f9f7ddfa92a0a9abaecbe0a6fac04d8f15"
+git-tree-sha1 = "2bc4eb61fd9b961c01cfe69580c759bf410797f8"
 uuid = "d91beb5f-3141-4656-855d-efd5d97b23c4"
-version = "0.2.0"
+version = "0.2.2"
 
 [[ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -81,6 +81,11 @@ git-tree-sha1 = "3b868935adf4ce2115f5487e789553507739014c"
 uuid = "a9693cdc-2bc8-5703-a9cd-1da358117377"
 version = "0.1.0"
 
+[[Crayons]]
+git-tree-sha1 = "cb7a62895da739fe5bb43f1a26d4292baf4b3dc0"
+uuid = "a8cc5b0e-0ffa-5ad4-8c14-923d3ee1735f"
+version = "4.0.1"
+
 [[DataAPI]]
 git-tree-sha1 = "674b67f344687a88310213ddfa8a2b3c76cc4252"
 uuid = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"
@@ -91,6 +96,11 @@ deps = ["InteractiveUtils", "OrderedCollections"]
 git-tree-sha1 = "b7720de347734f4716d1815b00ce5664ed6bbfd4"
 uuid = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
 version = "0.17.9"
+
+[[DataValueInterfaces]]
+git-tree-sha1 = "bfc1187b79289637fa0ef6d4436ebdfe6905cbd6"
+uuid = "e2d170a0-9d28-54be-80f0-106bbe20a464"
+version = "1.0.0"
 
 [[Dates]]
 deps = ["Printf"]
@@ -106,9 +116,9 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[DrWatson]]
 deps = ["FileIO", "LibGit2", "Pkg", "Random", "Requires"]
-git-tree-sha1 = "64c24a353af62566bfa7ed6a4b7127dae9824123"
+git-tree-sha1 = "3e75a8e7dab4c4138354ad86b68acdbf80cedfd5"
 uuid = "634d3b9d-ee7a-5ddf-bec9-22491ea816e1"
-version = "1.8.1"
+version = "1.9.0"
 
 [[FTPClient]]
 deps = ["LibCURL", "URIParser"]
@@ -118,14 +128,20 @@ version = "1.0.1"
 
 [[FileIO]]
 deps = ["Pkg"]
-git-tree-sha1 = "74585bf1f7ed7259e166011e89f49363d7fa89a6"
+git-tree-sha1 = "2c84c57aced468fa21763c66d3bef33adcd09ec7"
 uuid = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
-version = "1.2.1"
+version = "1.2.2"
 
 [[FixedPointNumbers]]
 git-tree-sha1 = "4aaea64dd0c30ad79037084f8ca2b94348e65eaa"
 uuid = "53c48c17-4a7d-5ca2-90c5-79b7896eea93"
 version = "0.7.1"
+
+[[Formatting]]
+deps = ["Printf"]
+git-tree-sha1 = "a0c901c29c0e7c763342751c0a94211d56c0de5c"
+uuid = "59287772-0a20-5a39-b81b-1366585eb4c0"
+version = "0.4.1"
 
 [[HDF5]]
 deps = ["BinaryProvider", "Blosc", "CMakeWrapper", "Libdl", "Mmap"]
@@ -136,6 +152,11 @@ version = "0.12.5"
 [[InteractiveUtils]]
 deps = ["Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
+
+[[IteratorInterfaceExtensions]]
+git-tree-sha1 = "a3f24677c21f5bbe9d2a714f95dcd58337fb2856"
+uuid = "82899510-4779-5014-852e-03e436cf321d"
+version = "1.0.0"
 
 [[JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
@@ -215,6 +236,12 @@ version = "0.3.11"
 deps = ["Dates", "LibGit2", "Markdown", "Printf", "REPL", "Random", "SHA", "UUIDs"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 
+[[PrettyTables]]
+deps = ["Crayons", "Formatting", "Parameters", "Reexport", "Tables"]
+git-tree-sha1 = "a857e385fc4be7c6c849ecd452b5859cb158b9e8"
+uuid = "08abe8d2-0d0c-5749-adfa-8a2ac140af0d"
+version = "0.8.2"
+
 [[Printf]]
 deps = ["Unicode"]
 uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
@@ -271,6 +298,18 @@ uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 [[Statistics]]
 deps = ["LinearAlgebra", "SparseArrays"]
 uuid = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+
+[[TableTraits]]
+deps = ["IteratorInterfaceExtensions"]
+git-tree-sha1 = "b1ad568ba658d8cbb3b892ed5380a6f3e781a81e"
+uuid = "3783bdb8-4a98-5b6b-af9a-565f29a5fe9c"
+version = "1.0.0"
+
+[[Tables]]
+deps = ["DataAPI", "DataValueInterfaces", "IteratorInterfaceExtensions", "LinearAlgebra", "TableTraits", "Test"]
+git-tree-sha1 = "aaed7b3b00248ff6a794375ad6adf30f30ca5591"
+uuid = "bd369af6-aec1-5ad0-b16a-f7cc5008161c"
+version = "0.2.11"
 
 [[Test]]
 deps = ["Distributed", "InteractiveUtils", "Logging", "Random"]
