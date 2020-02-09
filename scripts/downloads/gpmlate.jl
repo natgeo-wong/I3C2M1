@@ -2,7 +2,7 @@ using DrWatson
 quickactivate("/n/holylfs/LABS/kuang_lab/nwong/I3CM/")
 using ClimateSatellite
 
-global_logger(ConsoleLogger(stderr,Logging.Info))
+global_logger(ConsoleLogger(stdout,Logging.Info))
 
 user = "natgeo.wong@outlook.com";
 rvec = ["TRP","ISM"]; rext = ["SEA","MLD","SMT"];
