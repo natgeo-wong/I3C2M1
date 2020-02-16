@@ -15,7 +15,3 @@ end
 for yr = 2017 : 2019, mo = 1 : 12, reg in rext
     clisatsubregion("mtpw2m",Date(yr,mo),region=reg,path=ddir);
 end
-
-for yr = 2017 : 2019, reg in vcat(rvec,rext)
-    clisatanalysis("mtpw2m",yr,varname="tpw",region=reg,path=ddir);
-end

@@ -8,14 +8,10 @@ user = "natgeo.wong@outlook.com";
 rvec = ["TRP","ISM"]; rext = ["SEA","MLD","SMT"];
 ddir = "/n/kuangdss01/lab/clisat/"
 
-for yr = 2001 : 2018, mo = 1 : 12
+for yr = 2008 : 2018, mo = 1 : 12
     clisatdownload("gpmimerg",Date(yr,mo),email=user,regions=rvec,path=ddir);
 end
 
 for yr = 2001 : 2018, mo = 1 : 12, reg in rext
     clisatsubregion("gpmimerg",Date(yr,mo),region=reg,path=ddir);
-end
-
-for yr = 2001 : 2018, reg in vcat(rvec,rext)
-    clisatanalysis("gpmimerg",yr,varname="prcp_rate",region=reg,path=ddir);
 end
