@@ -5,15 +5,15 @@ using ClimateSatellite
 using NCDatasets
 
 greg = "SEA"
-# include(srcdir("etopo.jl")); lsseg,areawgt = etoporeg(greg); idarray = unique(lsseg);
-# nID = length(idarray); table = zeros(Int32,nID,2)
-#
-# for iID = 1 : nID
-#     table[iID,1] = idarray[iID];
-#     table[iID,2] = sum(lsseg .== idarray[iID]);
-# end
-#
-# table = table[table[:,2].>24,:];
+include(srcdir("etopo.jl")); lsseg,areawgt = etoporeg(greg); idarray = unique(lsseg);
+nID = length(idarray); table = zeros(Int32,nID,2)
+
+for iID = 1 : nID
+    table[iID,1] = idarray[iID];
+    table[iID,2] = sum(lsseg .== idarray[iID]);
+end
+
+table = table[table[:,2].>24,:];
 
 info = Dict(); clisatinfo!(info,"gpmimerg");
 fola = clisatanafol(info,greg)
