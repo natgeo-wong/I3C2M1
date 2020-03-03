@@ -4,6 +4,7 @@ using DrWatson
 using Dates
 using ClimateSatellite
 using NCDatasets
+using Seaborn
 
 greg = "SEA"
 include(srcdir("etopo.jl"));
@@ -101,14 +102,15 @@ function landmassind(
 end
 
 out = testextractdiurnalvariance(table,prcp,glon,glat,elon,elat) .* scle .+ oset;
-out = out.*3600; isize = log10.(table[2:end,2]); ivec = convert(Array,0.5:0.05:6);
+out = out.*3600;
+isize = (table[2:end,2]) .* 1.85531^2; ivec = convert(Array,1:0.05:10);
 bin01 = zeros(length(ivec));
 bin05 = zeros(length(ivec)); bin10 = zeros(length(ivec));
 bin20 = zeros(length(ivec)); bin50 = zeros(length(ivec));
 jj = 0;
 
 for ii in ivec; global jj = jj + 1;
-    ind = (isize .< ii+0.5) .& (isize .> ii-0.5);
+    ind = (isize .< (10^(ii+0.5))) .& (isize .> (10^(ii-0.5)));
     if (ind != []) .& (sum(ind)>1);  bin01[jj] = mean(out[ind]); else bin01[jj] = NaN end
     if (ind != []) .& (sum(ind)>5);  bin05[jj] = mean(out[ind]); else bin05[jj] = NaN end
     if (ind != []) .& (sum(ind)>10); bin10[jj] = mean(out[ind]); else bin10[jj] = NaN end
@@ -116,8 +118,14 @@ for ii in ivec; global jj = jj + 1;
     if (ind != []) .& (sum(ind)>50); bin50[jj] = mean(out[ind]); else bin50[jj] = NaN end
 end
 
-close(); figure(figsize=(6,5),dpi=200)
+ivec = 10 .^ ivec;
+close(); figure(figsize=(6,5),dpi=200); gca().set_xscale("log");
 scatter(ivec,bin01,s=2);
 scatter(ivec,bin05,s=2); scatter(ivec,bin10,s=2);
 scatter(ivec,bin20,s=2); scatter(ivec,bin50,s=2);
-xlim(0.5,6); grid("on"); gcf()
+plot([pi*24^2,pi*24^2],[2.4,3.2])
+plot([pi*48^2,pi*48^2],[2.4,3.2])
+xlabel(L"Size of Landmass / km$^2$")
+ylabel(L"Diurnal Cycle of Precipitation Rate / mm hr$^{-1}$")
+xlim(10,10^6); ylim(2.4,3.2); grid("on"); gcf()
+savefig("$(plotsdir("islandtest-0.5smooth.png"))",bbox_inches="tight")
