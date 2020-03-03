@@ -79,5 +79,7 @@ end
 function etoporeg(gregID::AbstractString)
     fregnc = joinpath(@__DIR__,"../data/etopo/etopo-$(gregID).nc")
     if !isfile(fregnc); etoporegextract(gregID,fregnc) end
-    rds = Dataset(fregnc,"r"); return rds["landsegments"][:]*1,rds["weightedarea"][:]*1.0
+    rds = Dataset(fregnc,"r");
+    return rds["landsegments"][:]*1,rds["weightedarea"][:]*1.0,
+           rds["longitude"][:]*1,rds["latitude"][:]*1
 end
