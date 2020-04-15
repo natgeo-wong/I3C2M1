@@ -1,6 +1,3 @@
-using DrWatson
-@quickactivate "I3CM"
-
 using Dates
 using NCDatasets
 using ImageSegmentation

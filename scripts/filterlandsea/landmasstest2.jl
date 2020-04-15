@@ -1,5 +1,5 @@
 using DrWatson
-@quickactivate "I3CM"
+@quickactivate "I3C2M1"
 
 using Dates
 using ClimateSatellite

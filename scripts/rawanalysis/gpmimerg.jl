@@ -1,5 +1,5 @@
 using DrWatson
-quickactivate("/n/holylfs/LABS/kuang_lab/nwong/I3CM/")
+@quickactivate "I3C2M1"
 using ClimateSatellite
 
 global_logger(ConsoleLogger(stdout,Logging.Info))

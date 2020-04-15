@@ -1,6 +1,6 @@
-# I3CM: Investigating the Impact of Islands on Climate and Models
+# I3C2M1: Investigating the Impact of Islands on Convection, Climate and Models
 
-This repository contains the code for my current project, which aims to investigate the impact of islands on the general circulation and climate models.
+This repository contains the code for my current project, which aims to investigate the impact of islands on convection, climate and models.
 
 > The Maritime Continent is the largest island archipelago in the world and spans five major countries in the region: Malaysia, Indonesia, Singapore, Philippines and Papua New Guinea. It holds a critical role in the global climate for a multitude of reasons: (1) it is globally one of the most important sources of convective release of latent heat and therefore plays a critical role in the global moisture flux; (2) it is geographically unique in its distribution of land and sea, neither fully oceanic nor truly continental, and this results in a strong diurnal cycle of precipitation that modulates and is modulated by larger-scale climate phenomena such as the monsoon and the Madden-Julian Oscillation (MJO); (3) it is located within the Indo-Pacific warmpool, one of the major drivers of convection in the region.
 >
@@ -19,7 +19,7 @@ The entire codebase is written in Julia.  If the data files are downloaded, you 
 * **GPM IMERG/NRT-LATE Files**: Modify the `ddir` variable in the download/rawanalysis scripts found in `scripts/download` and `scripts/rawanalysis` and save to whereever is relevant.  Use `ClimateSatellite.jl` to determine/point to your data folder.
 * **ERA5**: Modify the `ddir` variable in the download/rawanalysis scripts found in `scripts/download` and `scripts/rawanalysis` and save to whereever is relevant.  Use `ClimateERA.jl` to determine/point to your data folder.
 
-_**NB**: It is not advised to point the `ddir` into I3CM unless you have a lot of space available.  Most of my analysis of the relevant satellite and reanalysis data was done on the Harvard cluster Odyssey/Cannon._
+_**NB**: It is not advised to point the `ddir` into I3C2M1 unless you have a lot of space available.  Most of my analysis of the relevant satellite and reanalysis data was done on the Harvard cluster Odyssey/Cannon._
 
 ### Current Available Functionalities / Scripts
 * **Data Downloads**: See `scripts/download` to download available relevant satellite and ECMWF reanalysis data.  Uses `ClimateSatellite.jl` and `ClimateERA.jl`

@@ -1,0 +1,13 @@
+# (1)RegID,(2)Parent,(3)N,(4)W,(5)S,(6)E,(7)Description,(8)Notes
+
+MLD,SEA,20,93,0,110,Mainland Southeast Asia,Defined for I3CM Project
+SGP,SEA,3,101.5,0,106,Singapore / Johor,Defined for I3CM Project
+SMT,SEA,6,95,-6,107,Sumatra,Defined for I3CM Project
+JAV,SEA,-5,104,-10,116,Java,Defined for I3CM Project
+BRN,SEA,8,108,-5,120,Borneo,Defined for I3CM Project
+MLY,SEA,8,99,0,105,Peninsular Malaysia,Defined for I3CM Project
+PHI,SEA,5,117,19,127,Philippines,Defined for I3CM Project
+IDC,SEA,20,102,7,110,Indochina,Defined for I3CM Project
+PNG,SEA,0,130,-11,154,Papua New Guinea,Defined for I3CM Project
+
+ESO,TRP,30,150,-30,250,ENSO Region,Defined for I3CM Project

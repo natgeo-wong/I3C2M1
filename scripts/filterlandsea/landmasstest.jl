@@ -1,5 +1,5 @@
 using DrWatson
-@quickactivate "I3CM"
+@quickactivate "I3C2M1"
 
 using Dates
 using ClimateSatellite
@@ -11,7 +11,7 @@ include(srcdir("etopo.jl"));
 lsseg,areawgt,lon,lat = etoporeg(greg); idarray = unique(lsseg);
 nID = length(idarray); table = zeros(Int32,nID,2);
 elon = repeat(lon,outer=[1,length(lat)]);
-elat = repeat(lat,outer=[1,length(lon)])'; elat = convert(Array,elat);
+elat = repeat(lat,outer=[1,length(lon)])'; elat = collect(elat);
 
 for iID = 1 : nID
     table[iID,1] = idarray[iID];
@@ -103,7 +103,7 @@ end
 
 out = testextractdiurnalvariance(table,prcp,glon,glat,elon,elat) .* scle .+ oset;
 out = out.*3600;
-isize = (table[2:end,2]) .* 1.85531^2; ivec = convert(Array,1:0.05:10);
+isize = (table[2:end,2]) .* 1.85531^2; ivec = collect(1:0.05:10);
 bin01 = zeros(length(ivec));
 bin05 = zeros(length(ivec)); bin10 = zeros(length(ivec));
 bin20 = zeros(length(ivec)); bin50 = zeros(length(ivec));
