@@ -1,65 +1,25 @@
 using DrWatson
-@quickactivate "I3C2M1"
+@quickactivate "PiPWV"
 using ClimateERA
 
 global_logger(ConsoleLogger(stdout,Logging.Info))
+include(srcdir("ecmwf.jl"))
 
+init,eroot = erastartup(aID=2,dID=1,path="/n/kuangdss01/lab/ecmwf/"); adderaparams();
 
-## Dry Surface
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(1,1,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
+ecmwfdwn(init,eroot,modID="msfc",parID="prcp_conv",regID="TRP");
+ecmwfdwn(init,eroot,modID="msfc",parID="prcp_ls",regID="TRP");
+ecmwfdwn(init,eroot,modID="msfc",parID="prcp_tot",regID="TRP");
+ecmwfdwn(init,eroot,modID="msfc",parID="tcw",regID="TRP");
 
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(1,2,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
+ecmwfdwn(init,eroot,modID="mpre",parID="shum",regID="TRP");
 
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(1,3,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
+ecmwfdwn(init,eroot,modID="dsfc",parID="pre_sfc",regID="TRP");
+ecmwfdwn(init,eroot,modID="dsfc",parID="t_sfc",regID="TRP");
+ecmwfdwn(init,eroot,modID="dsfc",parID="u_sfc",regID="TRP");
+ecmwfdwn(init,eroot,modID="dsfc",parID="v_sfc",regID="TRP");
 
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(1,5,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-
-## Dry Pressure Levels
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(2,1,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(2,2,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(2,3,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(2,4,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-
-## Moist Surface
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(3,1,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(3,2,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(3,3,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(3,5,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
-
-
-## Moist Pressure Levels
-init,eroot = erastartup(1,1,"/n/kuangdss01/lab/ecmwf/");
-emod,epar,ereg,etime = erainitialize(4,2,2,0,init);
-eradownload(emod,epar,ereg,etime,eroot)
+ecmwfdwn(init,eroot,modID="dpre",parID="t_air",regID="TRP");
+ecmwfdwn(init,eroot,modID="dpre",parID="u_air",regID="TRP");
+ecmwfdwn(init,eroot,modID="dpre",parID="v_air",regID="TRP");
+ecmwfdwn(init,eroot,modID="dpre",parID="w_air",regID="TRP");

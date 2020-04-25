@@ -1,0 +1,2 @@
+#(1)Mode,(2)ID,(3)IDnc,(4)era5,(5)erai,(6)Full,(7)Units,(8)Notes
+dsfc,pre_sfc,sp,surface_pressure,134.128,Surface Pressure,hPa,Old ID for current p_sfc parameter in ClimateERA.jl
