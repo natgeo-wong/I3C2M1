@@ -13,7 +13,7 @@ eradownload(init,eroot,modID="msfc",parID="tcw",regID="TRP");
 
 eradownload(init,eroot,modID="mpre",parID="shum",regID="TRP");
 
-eradownload(init,eroot,modID="dsfc",parID="pre_sfc",regID="TRP");
+eradownload(init,eroot,modID="dsfc",parID="p_sfc",regID="TRP");
 eradownload(init,eroot,modID="dsfc",parID="t_sfc",regID="TRP");
 eradownload(init,eroot,modID="dsfc",parID="u_sfc",regID="TRP");
 eradownload(init,eroot,modID="dsfc",parID="v_sfc",regID="TRP");
