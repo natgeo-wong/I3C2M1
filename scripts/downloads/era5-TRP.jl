@@ -5,7 +5,7 @@ using ClimateERA
 global_logger(ConsoleLogger(stdout,Logging.Info))
 include(srcdir("common.jl"))
 
-init,eroot = erastartup(aID=2,dID=1,path="/n/kuangdss01/lab/ecmwf/"); adderaparams();
+init,eroot = erastartup(aID=1,dID=1,path="/n/kuangdss01/lab/ecmwf/"); adderaparams();
 
 eradownload(init,eroot,modID="msfc",parID="prcp_conv",regID="TRP");
 eradownload(init,eroot,modID="msfc",parID="prcp_ls",regID="TRP");
