@@ -4,15 +4,15 @@ using ImageSegmentation
 using GeoRegions
 
 function findetopo()
-    fetopo = joinpath(@__DIR__,"../data/raw/ETOPO1.grd")
+    fetopo = datadir("raw/ETOPO1.grd")
     if !isfile(fetopo); error("$(Dates.now()) - Please download the ETOPO1 file.") end
 end
 
 function etopoinit()
     findetopo();
-    fetopo = joinpath(@__DIR__,"../data/raw/ETOPO1.grd")
-    fsegnc = joinpath(@__DIR__,"../data/etopo/etopo-GLB.nc")
-    detopo = joinpath(@__DIR__,"../data/etopo/");
+    fetopo = datadir("raw/ETOPO1.grd")
+    fsegnc = datadir("etopo/etopo-GLB.nc")
+    detopo = datadir("etopo/")
     if !isdir(detopo); mkpath(detopo) end
     if !isfile(fsegnc); etoposeg(fetopo,fsegnc) end
     return fetopo,fsegnc
